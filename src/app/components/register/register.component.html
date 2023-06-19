@@ -1,0 +1,34 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="p-5 border border-primary-subtle rounded-5 bg-body-tertiary shadow-sm">
+        <form [formGroup]="teacherRegisterForm">
+            <img src="../assets/images/logo.png" alt="Logo" width="100" height="100" class="mb-4 mx-auto d-block">
+            <div class="form-floating mb-3">
+                <input type="text" id="teacher-firstName-input" class="form-control" formControlName="firstName">
+                <label for="teacher-firstName-input">Ad</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="teacher-lastName-input" class="form-control" formControlName="lastName">
+                <label for="teacher-lastName-input">Soyad</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="teacher-faculty-input" class="form-control" formControlName="faculty">
+                <label for="teacher-faculty-input">Fakülte</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" id="teacher-department-input" class="form-control" formControlName="department">
+                <label for="teacher-department-input">Bölüm</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="email" id="teacher-email-input" class="form-control" formControlName="email">
+                <label for="teacher-email-input">E-Mail</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" id="teacher-password-input" class="form-control" formControlName="password">
+                <label for="teacher-password-input">Parola</label>
+            </div>
+            <button (click)="register()" type="submit" class="btn btn-lg btn-primary w-100">Kayıt Ol</button>
+            <hr class="my-4">
+            <small class="text-body-secondary">Öğrenci Bilgi Sisteminde üyeliğin var mı? <a routerLink="/login">Giriş Yap</a></small>
+        </form>
+    </div>
+</div>

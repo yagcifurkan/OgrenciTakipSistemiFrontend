@@ -1,0 +1,27 @@
+<app-nav></app-nav>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-3">
+            <div class="list-group shadow-sm">
+                <a routerLink="lessons" routerLinkActive="active"
+                    class="list-group-item list-group-item-action">Dersler</a>
+                <a routerLink="lesson/add" routerLinkActive="active"
+                    class="list-group-item list-group-item-action">Ders Ekle</a>
+                <a routerLink="students" routerLinkActive="active"
+                    class="list-group-item list-group-item-action">Öğrenciler</a>
+                <a routerLink="student/add" routerLinkActive="active"
+                    class="list-group-item list-group-item-action">Öğrenci Ekle</a>
+                <a routerLink="announcements" routerLinkActive="active"
+                    class="list-group-item list-group-item-action">Duyurular</a>
+                <a routerLink="announcement/add" routerLinkActive="active"
+                    class="list-group-item list-group-item-action">Duyuru Gönder</a>
+            </div>
+        </div>
+        <div class="col-9">
+            <main class="p-4 bg-body-tertiary rounded border shadow-sm">
+                <router-outlet></router-outlet>
+            </main>
+        </div>
+    </div>
+</div>

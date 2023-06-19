@@ -1,0 +1,23 @@
+<h5 class="border-bottom border-primary-subtle pb-2 mb-0">Öğrenci Ders Ekle</h5>
+
+<div class="bg-body rounded-bottom shadow-sm p-4">
+    <form [formGroup]="gradeAddForm">
+        <div class="mb-3">
+            <label for="lesson-input" class="form-label">Ders</label>
+            <select id="lesson-input" class="form-select" formControlName="lessonId">
+                <option [ngValue]="lesson.id" *ngFor="let lesson of lessons">{{ lesson.name }}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="midtermexam-input" class="form-label">Vize</label>
+            <input id="midtermexam-input" class="form-control" type="number" formControlName="midtermExam">
+            <div id="midtermexam-help" class="form-text text-info">Vize not durumu eklenmeyecekse boş geçilebilir.</div>
+        </div>
+        <div class="mb-3">
+            <label for="finalexam-input" class="form-label">Final</label>
+            <input id="finalexam-input" class="form-control" type="number" formControlName="finalExam">
+            <div id="finalexam-help" class="form-text text-info">Final not durumu eklenmeyecekse boş geçilebilir.</div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary w-100" (click)="add()">Ekle</button>
+    </form>
+</div>

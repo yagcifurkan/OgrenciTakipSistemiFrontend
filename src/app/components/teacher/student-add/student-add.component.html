@@ -1,0 +1,33 @@
+<h5 class="border-bottom border-primary-subtle pb-2 mb-0">Öğrenci Ekle</h5>
+
+<div class="bg-body rounded-bottom shadow-sm p-4">
+    <form [formGroup]="studentAddForm">
+        <div class="mb-3">
+            <label for="student-firstName-input" class="form-label">Ad</label>
+            <input type="text" id="student-firstName-input" class="form-control" formControlName="firstName">
+        </div>
+        <div class="mb-3">
+            <label for="student-lastName-input" class="form-label">Soyad</label>
+            <input type="text" id="student-lastName-input" class="form-control" formControlName="lastName">
+        </div>
+        <div class="mb-3">
+            <label for="student-faculty-input" class="form-label">Fakülte</label>
+            <input type="text" id="student-faculty-input" class="form-control" formControlName="faculty">
+        </div>
+        <div class="mb-3">
+            <label for="student-department-input" class="form-label">Bölüm</label>
+            <input type="text" id="student-department-input" class="form-control" formControlName="department">
+        </div>
+        <div class="mb-3">
+            <label for="student-studentNumber-input" class="form-label">Öğrenci Numarası</label>
+            <input type="number" id="student-studentNumber-input" class="form-control" disabled>
+            <div id="student-studentNumber-help" class="form-text text-info">Öğrenci Numarası yıla göre otomatik olarak oluşturulacaktır.</div>
+        </div>
+        <div class="mb-3">
+            <label for="student-password-input" class="form-label">Parola</label>
+            <input type="password" id="student-password-input" class="form-control" disabled>
+            <div id="student-password-help" class="form-text text-info">Parola öğrenci numarası ile aynı olacak şekilde otomatik olarak oluşturulacaktır.</div>
+        </div>
+        <button (click)="add()" type="submit" class="btn btn-lg btn-primary w-100">Ekle</button>
+    </form>
+</div>

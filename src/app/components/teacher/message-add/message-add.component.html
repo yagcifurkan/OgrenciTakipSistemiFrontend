@@ -1,0 +1,15 @@
+<h5 class="border-bottom border-primary-subtle pb-2 mb-0">Mesaj Gönder</h5>
+
+<div class="bg-body rounded-bottom shadow-sm p-4">
+    <form [formGroup]="messageAddForm">
+        <div class="mb-3">
+            <label for="title-input" class="form-label">Başlık</label>
+            <input id="title-input" type="text" class="form-control" formControlName="title">
+        </div>
+        <div class="mb-3">
+            <label for="content-input" class="form-label">Mesaj İçeriği</label>
+            <textarea id="content-input" class="form-control" formControlName="content"></textarea>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="add()">Gönder</button>
+    </form>
+</div>

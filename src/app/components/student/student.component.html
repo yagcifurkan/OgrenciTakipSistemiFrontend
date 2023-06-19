@@ -1,0 +1,95 @@
+<app-nav></app-nav>
+
+<app-loading-spinner *ngIf="!announcements && !absences && !messages && !grades"></app-loading-spinner>
+
+<div class="container my-5">
+    <div class="bg-body-tertiary rounded border shadow-sm p-4 mb-5" *ngIf="announcements && absences && messages && grades">
+        <h5 class="border-bottom border-primary-subtle pb-2 mb-0">Duyurular</h5>
+        <div class="bg-body rounded-bottom shadow-sm p-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Fakülte</th>
+                        <th scope="col">Departman</th>
+                        <th scope="col">Duyuru</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let announcement of announcements">
+                        <td scope="row">{{ announcement.faculty }}</td>
+                        <td scope="row">{{ announcement.department }}</td>
+                        <td scope="row">{{ announcement.content }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="bg-body-tertiary rounded border shadow-sm p-4 mb-5">
+        <h5 class="border-bottom border-primary-subtle pb-2 mb-0">Mesajlarım</h5>
+        <div class="bg-body rounded-bottom shadow-sm p-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Başlık</th>
+                        <th scope="col">Mesaj</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let message of messages">
+                        <td scope="row">{{ message.title }}</td>
+                        <td>{{ message.content }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="bg-body-tertiary rounded border shadow-sm p-4 mb-5">
+        <h5 class="border-bottom border-primary-subtle pb-2 mb-0">Devamsızlık Durumum</h5>
+        <div class="bg-body rounded-bottom shadow-sm p-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Ders Adı</th>
+                        <th scope="col">Tarih</th>
+                        <th scope="col">Devamsızlık Durumu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let absence of absences">
+                        <td scope="row">{{ absence.lessonName }}</td>
+                        <td>{{ absence.date | date}}</td>
+                        <td>
+                            <span [ngClass]="absence.status ? 'badge text-bg-success' : 'badge text-bg-danger'" class="p-2">
+                                {{ absence.status ? 'Geldi' : 'Gelmedi' }}
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="bg-body-tertiary rounded border shadow-sm p-4">
+        <h5 class="border-bottom border-primary-subtle pb-2 mb-0">Not Durumum</h5>
+        <div class="bg-body rounded-bottom shadow-sm p-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Ders Adı</th>
+                        <th scope="col">Vize</th>
+                        <th scope="col">Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let grade of grades">
+                        <td scope="row">{{ grade.lessonName }}</td>
+                        <td>{{ grade.midtermExam }}</td>
+                        <td>{{ grade.finalExam }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

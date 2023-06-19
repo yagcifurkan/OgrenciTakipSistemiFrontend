@@ -1,0 +1,57 @@
+<app-loading-spinner *ngIf="!student && !absences"></app-loading-spinner>
+
+<h5 class="border-bottom border-primary-subtle pb-2 mb-0" *ngIf="student">
+    Devamsızlık Durumu - {{ student.firstName }} {{ student.lastName }} ({{ student.studentNumber }})
+</h5>
+<div class="bg-body rounded-bottom shadow-sm p-4 mb-5">
+    <table class="table table-hover bg-body-tertiary">
+        <thead>
+            <tr>
+                <th scope="col">Ders</th>
+                <th scope="col">Tarih</th>
+                <th scope="col">Devamsızlık Durumu</th>
+                <th scope="col" class="col-2">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let absence of absences">
+                <td scope="row">{{ absence.lessonName }}</td>
+                <td>{{ absence.date | date }}</td>
+                <td>
+                    <span [ngClass]="absence.status ? 'badge text-bg-success' : 'badge text-bg-danger'" class="p-2">
+                        {{ absence.status ? 'Geldi' : 'Gelmedi' }}
+                    </span>
+                </td>
+                <td>
+                    <button routerLink="/teacher/absence/edit/{{ absence.id }}" class="btn btn-sm btn-outline-warning"><i class="ri-loop-left-line"></i> Güncelle</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h5 class="border-bottom border-danger-subtle pb-2 mb-0" *ngIf="student">
+    Not Durumu - {{ student.firstName }} {{ student.lastName }} ({{student.studentNumber }})
+</h5>
+<div class="bg-body rounded-bottom shadow-sm p-4">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Ders</th>
+                <th scope="col">Vize</th>
+                <th scope="col">Final</th>
+                <th scope="col" class="col-2">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let grade of grades">
+                <td scope="row">{{ grade.lessonName }}</td>
+                <td>{{ grade.midtermExam }}</td>
+                <td>{{ grade.finalExam }}</td>
+                <td>
+                    <button routerLink="/teacher/grade/edit/{{ grade.id }}" class="btn btn-sm btn-outline-warning"><i class="ri-loop-left-line"></i> Güncelle</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

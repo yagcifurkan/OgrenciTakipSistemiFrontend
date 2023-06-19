@@ -1,0 +1,19 @@
+<h5 class="border-bottom border-primary-subtle pb-2 mb-0">Duyuru Gönder</h5>
+
+<div class="bg-body rounded-bottom shadow-sm p-4">
+    <form [formGroup]="announcementAddForm">
+        <div class="mb-3">
+            <label for="faculty-input" class="form-label">Fakülte</label>
+            <input id="faculty-input" class="form-control" type="text" formControlName="faculty">
+        </div>
+        <div class="mb-3">
+            <label for="department-input" class="form-label">Bölüm</label>
+            <input id="department-input" class="form-control" type="text" formControlName="department">
+        </div>
+        <div class="mb-3">
+            <label for="content-input" class="form-label">Duyuru İçeriği</label>
+            <textarea id="content-input" class="form-control" formControlName="content"></textarea>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" (click)="add()">Gönder</button>
+    </form>
+</div>

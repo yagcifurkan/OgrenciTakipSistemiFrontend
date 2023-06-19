@@ -1,0 +1,11 @@
+<h5 class="border-bottom border-primary-subtle pb-2 mb-0">Ders Ekle</h5>
+
+<div class="bg-body rounded-bottom shadow-sm p-4">
+    <form [formGroup]="lessonAddForm">
+        <div class="mb-3">
+            <label for="lesson-input" class="form-label">Ders Adı</label>
+            <input id="lesson-input" class="form-control" type="text" formControlName="name">
+        </div>
+        <button class="btn btn-lg btn-primary w-100" (click)="add()">Ekle</button>
+    </form>
+</div>

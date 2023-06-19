@@ -1,0 +1,18 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="p-5 border border-primary-subtle rounded-5 bg-body-tertiary shadow">
+        <form [formGroup]="studentLoginForm">
+            <img src="../assets/images/logo.png" alt="Logo" width="100" height="100" class="mb-4 mx-auto d-block">
+            <div class="form-floating mb-3">
+                <input type="email" id="teacher-email-input" class="form-control" formControlName="email">
+                <label for="teacher-email-input">E-Mail</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password"  id="teacher-password-input" class="form-control" formControlName="password">
+                <label for="teacher-password-input">Parola</label>
+            </div>
+            <button (click)="login()" type="submit" class="w-100 btn btn-lg btn-primary">Giriş Yap</button>
+            <hr class="my-4">
+            <small class="text-body-secondary">Öğrenci Bilgi Sisteminde üyeliğin yok mu? <a routerLink="/register">İletişime Geç</a></small>
+        </form>
+    </div>
+</div>
